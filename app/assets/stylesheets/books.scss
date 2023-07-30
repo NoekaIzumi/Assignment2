@@ -1,5 +1,30 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box
+}
 
+body {
+  font-family: verdana, arial, helvetica, sans-serif;
+  line-height: 18px;
+  margin: 33px;
+}
 
+h1 {
+  display: block;
+  font-weight: bold;
+}
+
+th {
+  padding-bottom: 5px;
+  text-align: -internal-center;
+}
+
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
