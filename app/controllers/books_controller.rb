@@ -5,11 +5,7 @@ class BooksController < ApplicationController
 
  def create
    @book = Book.new(book_params)
-   if @book.save
-     redirect to '/new'
-    else
-      render :index
-    end
+
  end
 
   def index
@@ -17,9 +13,18 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find(params[:id])
   end
 
   def edit
+    @book = Book.find(params[:id])
+  end
+
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to '/books'
+
   end
 
   def book_params

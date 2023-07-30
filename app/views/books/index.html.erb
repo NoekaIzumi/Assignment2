@@ -1,15 +1,34 @@
 
   <h1>Books</h1>
 
+<body>
+<% @books.each do |book| %>
   <table class="table">
-    <thead>
+
+   <tr>
       <th class="header1">Title</th>
       <th class="header2">Body</th>
-    </thead>
+   </tr>
 
-    
+    <tr>
+      <td><%= book.title %></td>
+      <td><%= book.body %>  <%= link_to "Show", "/books/#{book.id}" %>
+      <%= link_to "Edit"," /books/:id/edit"%>
+      <%= link_to "Destroy", "books/#{book.id}", method: :delete %>
+      </td>
+    </tr>
 
+<% end %>
+</table>
 
- 
+  <h2>New book</h2>
+<%= form_with model: Book.new do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
 
-  </table>
+  <h4>Body</h4>
+  <%= f.text_area :body %><br>
+
+  <%= f.submit 'Create Book' %>
+<% end %>
+</body>
