@@ -1,6 +1,12 @@
-<div>
-  <%= flash[:notice] %>
-</div>
+ <% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this book from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 
 <h1>Editing Book</h1>
 
@@ -13,7 +19,7 @@
   <br>
   <%= f.submit '  Update Book  ' %><br>
   <br>
-  <%= link_to "Show", "/books/#{@book.id}" %> |
-  <%= link_to "Back", "/books"%>
+  <%= link_to "Show", book_path(@book.id) %> |
+  <%= link_to "Back", books_path %>
 
 <% end %>
