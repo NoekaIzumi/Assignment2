@@ -8,11 +8,24 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   line-height: 18px;
   font-size: 13px;
+  margin: 33px;
 }
 
 h1 {
-  display: block;
   font-weight: bold;
+}
+
+table {
+  display: flex;
+  margin-top: 20px;
+}
+
+t-title {
+  text-align: center;
+}
+
+t-body {
+  text-align: center;
 }
 
 th {
@@ -26,9 +39,16 @@ td {
   padding-right: 5px;
 }
 
-table {
-  display: table;
+div.link {
+  float: right;
 }
+
+h4 {
+  font-weight: normal;
+  margin-top: 20px;
+}
+
+
 
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
